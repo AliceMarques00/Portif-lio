@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #3a193b 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+    
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            animation: fadeIn 0.8s ease-in;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 15px;
+            border: 4px solid #383146;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            }
+
+            .profile-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            }
+
+
+        h1 {
+            color: #4c3152;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #1f1e1e71;
+            font-size: 1.3em;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .contact-info a {
+            color: #4c3152;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+            display: inline-block;
+        }
+
+        .contact-info a:hover {
+            transform: translateY(-3px);
+            color: #4c3152;
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 0.8s ease-in;
+        }
+
+        h2 {
+            color: #4c3152;
+            margin-bottom: 25px;
+            font-size: 2em;
+            border-bottom: 3px solid #4c3152;
+            padding-bottom: 10px;
+        }
+
+        .about-text {
+            font-size: 1.1em;
+            color: #1f1f1f;
+            line-height: 1.8;
+        }
+
+        .experience-item, .education-item {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+            transition: transform 0.3s ease;
+        }
+
+        .experience-item:hover, .education-item:hover {
+            transform: translateX(10px);
+        }
+
+        .experience-item h3, .education-item h3 {
+            color: #181818;
+            margin-bottom: 5px;
+        }
+
+        .period {
+            color:#4c3152;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-category {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .skill-category h3 {
+            color:#4c3152;
+            margin-bottom: 15px;
+        }
+
+        .skill-tag {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            margin: 5px;
+            font-size: 0.9em;
+            transition: transform 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            transform: scale(1.1);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .project-card {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-card h3 {
+            color: #4c3152;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            text-align: center;
+            color: white;
+            padding: 30px;
+            margin-top: 40px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .skills-grid, .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="profile-img">
+                <img src="1111.jpg" alt="Foto de perfil">
+            </div>
+
+            <h1>Alice Marques</h1>
+            <div class="contact-info">
+                <a href="mailto:seu.email@exemplo.com">✉️ alicemarques20042005@gmail.com</a>
+                <a href="tel:+5581999999999">📱 (81)99353-0101</a>
+                <a href="https://linkedin.com" target="_blank">💼 https://www.linkedin.com/in/alice-marques/</a>
+                <a href="https://github.com" target="_blank">💻https://github.com/AliceMarques00</a>
+            </div>
+        </header>
+
+        <div class="section">
+            <h2>Sobre Mim</h2>
+            <p class="about-text">
+                Sou estudante na área de Computação, com conhecimentos em desenvolvimento e estilização de sites. Tenho experiência com 
+                Python para análise de dados, atuando por 1 ano em estágio com análises preditivas, dashboards, extração e modelagem de 
+                dados, além do uso de Power BI. Valorizo a comunicação e o trabalho em equipe, buscando um time onde possa me desenvolver
+                e contribuir com meus conhecimentos.
+
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Experiência Profissional</h2>
+            <div class="experience-item">
+                <h3> Estágio em Tecnologia da informação- Recife Doces e Caramelos</h3>
+                <p class="period">(2024-2025) </p>
+                <p>Atuei auxiliando na elaboração de planilhas e no levantamento de dados, além de apoiar nas análises de dados e no 
+                    desenvolvimento de sistemas. Também prestei suporte técnico e realizei manutenção em sistemas e servidores, 
+                    contribuindo para o bom funcionamento das rotinas da empresa.</p>
+            </div>
+         <div class="section">
+            <h2>Formação</h2>
+            <div class="education-item">
+                <h3>Técnico em logística</h3>
+                <p class="period">Escola Técnica Alcides do Nascimento Lins- 2020 - 2022</p>
+            </div>
+        </div>
+        <div class="section">
+            <h2>Formação</h2>
+            <div class="education-item">
+                <h3>Licenciatura em Computação</h3>
+                <p class="period">Universidade Federal - 2023 - 2027</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Habilidades</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Frontend</h3>
+                    <span class="skill-tag">HTML/CSS</span>
+                    <span class="skill-tag">JavaScript</span>
+                </div>
+                <div class="skill-category">
+                    <h3>Backend</h3>
+                    <span class="skill-tag">Java</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">SQL</span>
+                    <span class="skill-tag">MySQL</span>
+                </div>
+                <div class="skill-category">
+                    <h3>Ferramentas</h3>
+                    <span class="skill-tag">Git</span>
+                    <span class="skill-tag">Github</span>
+                    <span class="skill-tag">Figma</span>
+                    <span class="skill-tag">Excel</span>
+                    <span class="skill-tag">Power BI</span>
+                </div>
+                <div class="skill-category">
+                    <h3>Soft</h3>
+                    <span class="skill-tag">Boa comunicação</span>
+                    <span class="skill-tag">Organização</span>
+                    <span class="skill-tag">Proatividade</span>
+                    <span class="skill-tag">Trabalho em equipe</span>
+                    <span class="skill-tag">Criatividade</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Informações complementares</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Instituto Aliança com o Adolescente | SOFTEX | Projeto Com Domínio Digital 4.0 - Curso de Extensão</h3>
+                    <p>Universitária Certificado pela Universidade Estadual do Ceará | 335h | 2024.1 – (Em andamento) - Conteúdo técnico: 
+                        Lógica de programação, Orientação a Objetos, Python, Java, Banco de Dados (SQL), Metodologias ágeis (SCRUM e Kanban). 
+                        Conteúdo Habilidades Socioemocionais: Autoeficácia para o trabalho, Autogestão Engajamento,amabilidade, Resiliência 
+                        Emocional, Abertura para o novo.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Líder da startup fictícia Wise Eyes Auditoria</h3>
+                    <p>A Wise Eyes Auditoria foi uma startup criada como projeto para um concurso de um curso no Porto Digital, onde meu grupo conquistou 
+                        o 2º lugar. Em tese o projeto utilizaria IA e tecnologia RFID para garantir a segurança no transporte e carregamento de cargas.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Nexa- Fundamentos de IA Generativa com Bedrock</h3>
+                    <p>Aprendi sobre IA e ferramentas aplicáveis ao ambiente profissional e estudantil.</p>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 Seu Nome. Todos os direitos reservados.</p>
+        </footer>
+    </div>
+</body>
+</html> 
